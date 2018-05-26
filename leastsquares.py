@@ -28,7 +28,7 @@ def error(p, x, y):
 #初始的参数
 p0 = [10,10,10]
 Para = leastsq(error, p0, args=(Xi, Yi))
-# print(Para)
+print(Para)
 # parameter ,  cost
 # (array([ 2.06607141,  2.5975001 ,  4.68999985]), 1)
 
