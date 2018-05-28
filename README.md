@@ -4,6 +4,7 @@ mashin learning / data mining
 
 + leastsquares    最小二乘法
 + katz_backoff    二元统计语言模型
++ page rank       网页质量算法
 
 ***** Preprocessing
 + scale 零均值单位差
