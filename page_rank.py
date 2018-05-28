@@ -8,13 +8,29 @@
 #
 
 import numpy as np
+import pdb
 
-data = np.random.randint(0,2, (10,10)) 
+#网页数量
+N = 15
+# 平滑系数
+a = 0.0001
+
+data = np.random.randint(0,2, (N, N)) 
+print('n 对 m 的指向数')
+print(data)
+data = data / np.sum(data, axis = 0)
+
+print('去除指向自己')
+for i in range(len(data)):
+  data[i,i] = 0
+data = data / np.sum(data, axis = 0)
 print(data)
 
-rank = np.ones(10).T * 1 /15
+
+rank = np.ones(N).T * 1 / N
 print(rank)
-for i in range(100):
-  rank = np.dot(data, rank)
-print(rank)
+for i in range(10):
+  temp = a / N * np.eye(N) + (1-a) * data
+  rank = np.dot(a/N * np.eye(N) + (1 - a) * data, rank)
+  print(rank)
 
