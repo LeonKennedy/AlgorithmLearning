@@ -14,8 +14,10 @@ from scipy.optimize import leastsq
 
 
 
-Xi=np.array([1,2,3,4,5,6])
-Yi=np.array([9.1,18.3,32,47,69.5,94.8])
+#Xi=np.array([1,2,3,4,5,6])
+#Yi=np.array([9.1,18.3,32,47,69.5,94.8])
+Xi=np.array([0,1,2,3,-1,-2,-3])
+Yi=np.array([-1.21,1.9,3.2,10.3,2.2,3.71,8.7])
 
 def func(p,x):
     a,b,c=p
@@ -24,11 +26,15 @@ def func(p,x):
 def error(p, x, y):
     return func(p, x) - y
 
-
 #初始的参数
 p0 = [10,10,10]
-Para = leastsq(error, p0, args=(Xi, Yi))
-print(Para)
+para , count = leastsq(error, p0, args=(Xi, Yi))
 # parameter ,  cost
 # (array([ 2.06607141,  2.5975001 ,  4.68999985]), 1)
+TY = np.array([ func(para, i) for i in Yi])
+plt.scatter(Xi,Yi)
+x=np.linspace(-5,5,1000)
+y=np.array([ func(para,i) for i in x])
+plt.plot(x,y)
+plt.show()
 
