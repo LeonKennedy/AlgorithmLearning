@@ -6,6 +6,7 @@
 # @Create: 2018-07-30 18:18:33
 # @Last Modified: 2018-07-30 18:18:33
 #
+import random, string
 
 def comparison(str_a, str_b):
   if len(str_a) != len(str_b):
@@ -25,8 +26,24 @@ def comparison(str_a, str_b):
       return False
   return True
 
+
+def shuffler(data):
+  temp = [i for i in data]
+  random.shuffle(temp)
+  return ''.join(temp)
+
+def unit_test():
+  chinese = '飞机房间的身份'
+  str_a = ''.join(random.sample(string.ascii_letters + string.digits + chinese, 8))
+  str_b = shuffler(str_a)
+  str_c = ''.join(random.sample(string.ascii_letters + string.digits + chinese, 8))
+  print("(string a)%s" % str_a)
+  print("(string b)%s" % str_b)
+  assert comparison('','')
+  assert comparison(str_a,str_b)
+  assert not comparison(str_a,str_c)
+
 if __name__ == "__main__":
-  a = 's你好e'
-  b = 'e好你s'
-  print("%s and %s is same? %s" % (a,b,comparison(a,b)))
+  #print("%s and %s is same? %s" % (a,b,comparison(a,b)))
+  unit_test()
 
