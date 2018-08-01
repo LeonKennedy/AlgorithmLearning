@@ -6,6 +6,7 @@ mashin learning / data mining
 + katz_backoff    二元统计语言模型
 + page rank       网页质量算法
 + unordered_string_comparison  乱序字符串检验
++ orderd_matrix_check_integer  有序矩阵元素检查
 
 ***** Preprocessing
 + scale 零均值单位差
