@@ -10,8 +10,7 @@ import pdb
 
 
 def order_matrix_is_exist_integer(matrix, value):
-  i = 0
-  j = 0
+  i = 0; j = 0
   rows_count = len(matrix)
   if rows_count == 0 :
     return False
