@@ -11,6 +11,8 @@ mashin learning / data mining
 + two_n_pow     2的n次幂   512< n < 1024
 + genetic      遗传算法
 + building 城堡优化问题
++ GibbsSampleing 吉布斯采样 
++ LatentDirichletAnalysis LDA主题分解 使用Gibbs
 ***** Preprocessing
 + scale 零均值单位差
 + StandardScaler 计算训练机的平均值和标准差， 以便测试数据使用相同的变化
